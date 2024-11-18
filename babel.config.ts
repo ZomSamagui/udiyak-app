@@ -1,14 +1,18 @@
-import 'styled-components/native'
-
-
-declare module 'styled-components/native' {
-export interface DefaultTheme {
-    borderRadius: string;
-
-
-    colors: {
-      main: string;
-      secondary: string;
-    };
-  }
-}
+module.exports = {
+    presets: [
+        '@babel/preset-env',
+        '@babel/preset-react',
+        '@babel/preset-typescript'
+    ],
+    plugins: [
+        [
+            'module-resolver',
+            {
+                root: ['./'],
+                alias: {
+                    src: './src',
+                },
+            },
+        ],
+    ],
+};
