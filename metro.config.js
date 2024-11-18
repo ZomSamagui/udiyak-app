@@ -1,7 +1,13 @@
-module.exports = {
-    resolver: {
-        sourceExts: ['jsx', 'js', 'ts', 'tsx'],
-    },
-    watchFolders: ['./src'],
-    maxWorkers: 2,
-};
+const { getDefaultConfig } = require('metro-config');
+
+module.exports = (async () => {
+    const {
+        resolver: { sourceExts, assetExts },
+    } = await getDefaultConfig();
+    return {
+        resolver: {
+            assetExts,
+            sourceExts: [...sourceExts, 'jsx', 'tsx'],
+        },
+    };
+})();

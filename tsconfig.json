@@ -4,6 +4,16 @@
     "baseUrl": ".",
     "paths": {
       "src/*": ["src/*"]
-    }
-  }
+    },
+    "jsx": "react",
+    "target": "esnext",
+    "moduleResolution": "nodenext",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }
